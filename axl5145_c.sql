@@ -15,22 +15,11 @@ CREATE TABLE `Airport` (
   PRIMARY KEY (`Code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table `Airport`
-
-LOCK TABLES `Airport` WRITE;
-
-INSERT INTO `Airport` VALUES('DFW','Dallas','TX'),
-('LOG','BOSTON','MA'), ('ORD','Chicago','IL'),
-('MDW','Chicago','IL'), ('JFK','New York','NY'),
-('LGA','New York','NY'), ('INT','Houston','TX'),
-('LAX','Los Angeles','CA');
-
-UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Flight`;
 
 CREATE TABLE `Flight` (
-  `FLNO` INT NOT NULL DEFAULT '',
+  `FLNO` INT NOT NULL DEFAULT '0',
   `Meal` varchar(50) DEFAULT NULL,
   `Smoking` char(1) DEFAULT 'N',
   PRIMARY KEY (`FLNO`)
