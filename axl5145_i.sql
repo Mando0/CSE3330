@@ -18,3 +18,10 @@ INSERT INTO `Airport` VALUES('DFW','Dallas','TX'),
 
 UNLOCK TABLES;
 
+LOCK TABLES `Flight` WRITE;
+
+INSERT INTO `Flight` VALUES(1000,'Bistro','Y'),
+(1010,'Meal','N'), (1020,'Meal','Y'),
+(1030,'Snack','N'), (1040,'Meal','N');
+
+UNLOCK TABLES;
