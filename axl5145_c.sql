@@ -6,7 +6,6 @@
 
 -- Table structure for table Airport
 
-DROP TABLE IF EXISTS `Airport`;
 
 CREATE TABLE `Airport` (
   `Code` char(3) NOT NULL DEFAULT '',
@@ -16,7 +15,6 @@ CREATE TABLE `Airport` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `Flight`;
 
 CREATE TABLE `Flight` (
   `FLNO` INT NOT NULL DEFAULT '0',
@@ -25,7 +23,6 @@ CREATE TABLE `Flight` (
   PRIMARY KEY (`FLNO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `FlightInstance`;
 
 CREATE TABLE `FlightInstance` (
   `FLNO` INT NOT NULL DEFAULT '0',
@@ -34,7 +31,6 @@ CREATE TABLE `FlightInstance` (
   FOREIGN KEY (`FLNO`) REFERENCES Flight (`FLNO`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `PlaneType`;
 
 CREATE TABLE `PlaneType` ( 
   `Maker` VARCHAR(15) NOT NULL DEAFULT "",
