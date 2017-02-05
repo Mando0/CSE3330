@@ -25,3 +25,13 @@ INSERT INTO `Flight` VALUES(1000,'Bistro','Y'),
 (1030,'Snack','N'), (1040,'Meal','N');
 
 UNLOCK TABLES;
+
+
+LOCK TABLES `FlightInstance` WRITE;
+
+INSERT INTO `FlightInstance` VALUES(1000,'10/5/2002'),
+(1000,'10/6/2002'), (1000,'10/7/2002'), (1010,'10/5/2002'),
+(1010,'10/6/2002'), (1020,'10/5/2002'), (1030,'10/5/2002'),
+(1040,'10/7/2002');
+
+UNLOCK TABLES;
