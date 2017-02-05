@@ -33,3 +33,14 @@ CREATE TABLE `FlightInstance` (
   PRIMARY KEY (`FLNO`, `FDate`),
   FOREIGN KEY (`FLNO`) REFERENCES Flight (`FLNO`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `PlaneType`;
+
+CREATE TABLE `PlaneType` ( 
+  `Maker` VARCHAR(15) NOT NULL DEAFULT "",
+  `Model` VARCHAR(15) NOT NULL DEAFULT "",
+  `FlyingSpeed` INT NOT NULL DEAFULT 0,
+  `GroundSpeed` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`Maker`, `Model`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  
