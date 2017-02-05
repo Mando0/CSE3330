@@ -24,3 +24,11 @@ CREATE TABLE `Flight` (
   `Smoking` char(1) DEFAULT 'N',
   PRIMARY KEY (`FLNO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `FlightInstance`;
+
+CREATE TABLE `FlightInstance` (
+  `FLNO` INT NOT NULL DEFAULT '0',
+  `FDate` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FLNO`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
