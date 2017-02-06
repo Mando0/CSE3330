@@ -64,7 +64,7 @@ CREATE TABLE `Reservation` (
   `ToA` CHAR(3) NOT NULL DEFAULT "",
   `SeatClass` CHAR(1) NOT NULL DEFAULT "",
   `DateBooked` CHAR(10) DEFAULT "",
-  `DateCancelled` CHAR(10) DEFAULT "",
+  `DateCancelled` CHAR(10) DEFAULT NULL,
   PRIMARY KEY (`PassID`, `FLNO`, `FDate`),
   FOREIGN KEY (`PassID`) REFERENCES Passenger ( `ID`),
   FOREIGN KEY (`FLNO`, `FDate`) REFERENCES FlightInstance (`FLNO`, `FDate`),
