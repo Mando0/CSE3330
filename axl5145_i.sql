@@ -35,3 +35,24 @@ INSERT INTO `FlightInstance` VALUES(1000,'10/5/2002'),
 (1040,'10/7/2002');
 
 UNLOCK TABLES;
+
+LOCK TABLES `PlaneType` WRITE;
+
+INSERT INTO `PlaneType` VALUES('MD', 'MD11', 600, 180),
+('MD', 'SUPER80', 500, 170), ('BOEING', '727', 510, 160),
+('BOEING', '757', 650, 160), ('AIRBUS', 'A300', 620, 150),
+('AIRBUS', 'A320', 700, 180);
+
+UNLOCK TABLES;
+
+LOCK TABLES `PlaneSeats` WRITE;
+
+INSERT INTO `PlaneSeats` VALUES('MD', 'MD11', 'F', 20),
+('MD', 'MD11', 'E', 150), ('MD', 'SUPER80', 'F', 10),
+('MD', 'SUPER80', 'E', 90), ('BOEING', '727', 'F', 10),
+('BOEING', '727', 'E', 110), ('BOEING', '757', 'F', 20),
+('BOEING', '757', 'E', 160), ('AIRBUS', 'A300', 'F', 20),
+('AIRBUS', 'A300', 'E', 160), ('AIRBUS', 'A320', 'F', 30),
+('AIRBUS', 'A320', 'E', 200);
+
+UNLOCK TABLES;
