@@ -4,6 +4,7 @@
 -- 1000625145
 -- Project #1
 
+DROP TABLE IF EXISTS `Reservation`;
 DROP TABLE IF EXISTS `Passenger`;
 DROP TABLE IF EXISTS `PlaneSeats`;
 DROP TABLE IF EXISTS `PlaneType`;

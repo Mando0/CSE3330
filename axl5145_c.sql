@@ -51,7 +51,23 @@ CREATE TABLE `PlaneSeats` (
 
 CREATE TABLE `Passenger` (
   `ID` INT NOT NULL DEFAULT 0, 
-  `Name` VARCHAR(2) NOT NULL DEFAULT "",
+  `Name` VARCHAR(20) NOT NULL DEFAULT "",
   `Phone` CHAR(13) DEFAULT "",
   PRIMARY KEY (`ID`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `Reservation` (
+  `PassID` INT NOT NULL DEFAULT 0,
+  `FLNO` INT NOT NULL DEFAULT 0,
+  `FDate` CHAR(10) DEFAULT "",
+  `FromA` CHAR(3) NOT NULL DEFAULT "",
+  `ToA` CHAR(3) NOT NULL DEFAULT "",
+  `SeatClass` CHAR(1) NOT NULL DEFAULT "",
+  `DateBooked` CHAR(10) DEFAULT "",
+  `DateCancelled` CHAR(10) DEFAULT "",
+  PRIMARY KEY (`PassID`, `FLNO`, `FDate`),
+  FOREIGN KEY (`PassID`) REFERENCES Passenger ( `ID`),
+  FOREIGN KEY (`FLNO`, `FDate`) REFERENCES FlightInstance (`FLNO`, `FDate`),
+  FOREIGN KEY (`FromA`) REFERENCES Airport (`Code`),
+  FOREIGN KEY (`ToA`) REFERENCES Airport (`Code`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
