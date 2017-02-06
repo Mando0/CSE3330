@@ -48,3 +48,10 @@ CREATE TABLE `PlaneSeats` (
   PRIMARY KEY (`Maker`, `Model`, `SeatType`),
   FOREIGN KEY (`Maker`, `Model`) REFERENCES PlaneType (`Maker`, `Model`) 
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `Passenger` (
+  `ID` INT NOT NULL DEFAULT 0, 
+  `Name` VARCHAR(2) NOT NULL DEFAULT "",
+  `Phone` CHAR(13) DEFAULT "",
+  PRIMARY KEY (`ID`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

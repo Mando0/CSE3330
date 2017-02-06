@@ -56,3 +56,15 @@ INSERT INTO `PlaneSeats` VALUES('MD', 'MD11', 'F', 20),
 ('AIRBUS', 'A320', 'E', 200);
 
 UNLOCK TABLES;
+
+LOCK TABLES `Passenger` WRITE;
+
+INSERT INTO `Passenger` VALUES(1, 'Jones', '(972)999-1111'),
+(2, 'James', '(214)111-9999'), (3, 'Henry', '(214)222-1111'),
+(4, 'Luis', '(972)111-3333'), (5, 'Howard', '(972)333-1111'),
+(6, 'Frank', '(214)111-5555'), (7, 'Frankel', '(972)111-2222'),
+(8, 'Bushnell', '(214)111-4444'), (9, 'Camden', '(214)222-5555'),
+(10, 'Max', '(214)444-1111'), (11, 'Flores', '(214)333-6666'),
+(12, 'Clinton', '(214)222-5555');
+
+UNLOCK TABLES;
