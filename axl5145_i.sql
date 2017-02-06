@@ -88,4 +88,14 @@ INSERT INTO `Reservation` VALUES(1, 1000, '10/5/2002', 'DFW', 'LOG', 'E', '9/5/2
 (1, 1010, '10/6/2002', 'ORD', 'JFK', 'E', '9/15/2002',''),
 (1, 1040, '10/7/2002', 'LAX', 'LGA', 'E', '10/1/2002','');
 
-UNLOCK TABLES:
+UNLOCK TABLES;
+
+LOCK TABLES `Pilot` WRITE;
+
+INSERT INTO `Pilot` VALUES(1, 'Jones', '5/10/1990'),
+(2, 'Adams', '6/1/1990'), (3, 'Walker', '7/2/1991'),
+(4, 'Flores', '4/1/1992'), (5, 'Thompson', '4/10/1992'),
+(6, 'Dean', '9/2/1993'), (7, 'Carter', '8/1/1994'),
+(8, 'Mango', '5/2/1995');
+
+UNLOCK TABLES;

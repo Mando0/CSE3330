@@ -71,3 +71,10 @@ CREATE TABLE `Reservation` (
   FOREIGN KEY (`FromA`) REFERENCES Airport (`Code`),
   FOREIGN KEY (`ToA`) REFERENCES Airport (`Code`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `Pilot` (
+  `ID` INT NOT NULL DEFAULT 0,
+  `Name` VARCHAR(15) NOT NULL DEFAULT '',
+  `DateHired` CHAR(10) NOT NULL DEFAULT '',
+  PRIMARY KEY (`ID`)
+  )
