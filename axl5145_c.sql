@@ -33,9 +33,9 @@ CREATE TABLE `FlightInstance` (
 
 
 CREATE TABLE `PlaneType` ( 
-  `Maker` VARCHAR(15) NOT NULL DEAFULT "",
-  `Model` VARCHAR(15) NOT NULL DEAFULT "",
-  `FlyingSpeed` INT NOT NULL DEAFULT 0,
+  `Maker` VARCHAR(15) NOT NULL DEFAULT "",
+  `Model` VARCHAR(15) NOT NULL DEFAULT "",
+  `FlyingSpeed` INT NOT NULL DEFAULT 0,
   `GroundSpeed` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`Maker`, `Model`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
