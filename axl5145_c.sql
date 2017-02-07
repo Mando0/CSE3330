@@ -78,3 +78,14 @@ CREATE TABLE `Pilot` (
   `DateHired` CHAR(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`ID`)
   )
+
+CREATE TABLE `Plane` (
+  `ID` INT NOT NULL DEFAULT 0,
+  `Maker` VARCHAR(15) NOT NULL DEFAULT '',
+  `Model` VARCHAR(15) NOT NULL DEFAULT '',
+  `LastMaint` CHAR(10) DEFAULT NULL,
+  `LastMaintA` CHAR(3) NOT NULL DEFAULT '',
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`Maker`, `Model`) REFERENCES PlaneType (`Maker`, `Model`),
+  FOREIGN KEY (`LastMaintA`) REFERENCES Airport (`Code`)
+  )

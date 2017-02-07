@@ -99,3 +99,18 @@ INSERT INTO `Pilot` VALUES(1, 'Jones', '5/10/1990'),
 (8, 'Mango', '5/2/1995');
 
 UNLOCK TABLES;
+
+
+LOCK TABLES `Plane` WRITE;
+
+INSERT INTO `Plane` VALUES(1, 'MD', 'MD11', '09/03/2002', 'DFW'),
+(2, 'MD', 'MD11', '09/04/2002', 'MDW'), 
+(3, 'MD', 'SUPER80', '09/01/2002', 'LAX'),
+(4, 'MD', 'SUPER80', '09/03/2002', 'ORD'),
+(5, 'MD', 'SUPER80', '09/06/2002', 'LGA'),
+(6, 'BOEING', '727', '09/01/2002', 'DFW'),
+(7, 'BOEING', '757', '10/02/2002', 'LAX'),
+(8, 'AIRBUS', 'A300', '09/01/2002', 'INT'),
+(9, 'AIRBUS', 'A320', '09/04/2002', 'LOG');
+
+UNLOCK TABLES;
