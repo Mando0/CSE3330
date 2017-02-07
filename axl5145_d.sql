@@ -4,7 +4,9 @@
 -- 1000625145
 -- Project #1
 
+DROP TABLE IF EXISTS `FlightLegInstance`;
 DROP TABLE IF EXISTS `FlightLeg`;
+DROP TABLE IF EXISTS `Plane`;
 DROP TABLE IF EXISTS `Pilot`;
 DROP TABLE IF EXISTS `Reservation`;
 DROP TABLE IF EXISTS `Passenger`;
