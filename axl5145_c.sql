@@ -77,7 +77,7 @@ CREATE TABLE `Pilot` (
   `Name` VARCHAR(15) NOT NULL DEFAULT '',
   `DateHired` CHAR(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`ID`)
-  )
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `Plane` (
   `ID` INT NOT NULL DEFAULT 0,
@@ -88,4 +88,19 @@ CREATE TABLE `Plane` (
   PRIMARY KEY (`ID`),
   FOREIGN KEY (`Maker`, `Model`) REFERENCES PlaneType (`Maker`, `Model`),
   FOREIGN KEY (`LastMaintA`) REFERENCES Airport (`Code`)
-  )
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `FlightLeg` (
+  `FLNO` INT NOT NULL DEFAULT 0,
+  `Seq` INT NOT NULL DEFAULT 0,
+  `FromA` CHAR(3) NOT NULL DEFAULT '',
+  `ToA` CHAR(3) NOT NULL DEFAULT '',
+  `DeptTime` CHAR(16) NOT NULL DEFAULT '',
+  `ArrTime` CHAR(16) NOT NULL DEFAULT '',
+  `Plane` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`FLNO`, `Seq`),
+  FOREIGN KEY (`FLNO`) REFERENCES Flight (`FLNO`),
+  FOREIGN KEY (`FromA`) REFERENCES Airport (`Code`),
+  FOREIGN KEY (`ToA`) REFERENCES Airport (`Code`),
+  FOREIGN KEY (`Plane`) REFERENCES Plane (`ID`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
