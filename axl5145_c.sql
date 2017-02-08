@@ -115,5 +115,5 @@ CREATE TABLE `FlightLegInstance` (
   PRIMARY KEY (`Seq`, `FLNO`, `FDate`),
   FOREIGN KEY (`Seq`, `FLNO`) REFERENCES FlightLeg (`Seq`, `FLNO`),
   FOREIGN KEY (`FLNO`, `FDate`) REFERENCES FlightInstance (`FLNO`, `FDate`),
-  FOREIGN KEY (`Pilot` REFERENCES Pilot (`ID`)
+  FOREIGN KEY (`Pilot`) REFERENCES Pilot (`ID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
