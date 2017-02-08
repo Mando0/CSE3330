@@ -5,7 +5,7 @@
 -- Project #1
 
 -- Table structure for table Airport
-
+-- CREATE TABLE IF NOT EXISTS TableName
 
 CREATE TABLE `Airport` (
   `Code` char(3) NOT NULL DEFAULT '',
@@ -103,4 +103,17 @@ CREATE TABLE `FlightLeg` (
   FOREIGN KEY (`FromA`) REFERENCES Airport (`Code`),
   FOREIGN KEY (`ToA`) REFERENCES Airport (`Code`),
   FOREIGN KEY (`Plane`) REFERENCES Plane (`ID`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `FlightLegInstance` (
+  `Seq` INT NOT NULL DEFAULT 0,
+  `FLNO` INT NOT NULL DEFAULT 0,
+  `FDate` VARCHAR(10) DEFAULT '',
+  `ActDept` VARCHAR(20) DEFAULT '',
+  `ActArr` VARCHAR(20) DEFAULT '',
+  `Pilot` INT DEFAULT 0,
+  PRIMARY KEY (`Seq`, `FLNO`, `FDate`),
+  FOREIGN KEY (`Seq`, `FLNO`) REFERENCES FlightLeg (`Seq`, `FLNO`),
+  FOREIGN KEY (`FLNO`, `FDate`) REFERENCES FlightInstance (`FLNO`, `FDate`),
+  FOREIGN KEY (`Pilot` REFERENCES Pilot (`ID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
