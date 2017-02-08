@@ -113,7 +113,7 @@ CREATE TABLE `FlightLegInstance` (
   `ActArr` VARCHAR(20) DEFAULT '',
   `Pilot` INT DEFAULT 0,
   PRIMARY KEY (`Seq`, `FLNO`, `FDate`),
-  FOREIGN KEY (`Seq`, `FLNO`) REFERENCES FlightLeg (`Seq`, `FLNO`),
+  FOREIGN KEY (`FLNO`, `Seq`) REFERENCES FlightLeg (`FLNO`, `Seq`),
   FOREIGN KEY (`FLNO`, `FDate`) REFERENCES FlightInstance (`FLNO`, `FDate`),
   FOREIGN KEY (`Pilot`) REFERENCES Pilot (`ID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
